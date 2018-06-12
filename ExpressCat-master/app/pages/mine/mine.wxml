@@ -1,0 +1,63 @@
+
+<!-- 头像 -->
+<view class="wx-flex o-teaser align-str bod-b">
+  <view  class="avatar-item">
+    <image wx:if="{{avatarUrl}}" class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
+  </view>
+
+  <view class="wx-flex">
+    <!-- <text class="o-arrow-r"></text> -->
+  </view>
+</view>
+
+<!-- 昵称 -->
+<view class="wx-flex o-teaser align-str bod-b">
+  <view  class="wx-flex">
+    <text class="c-black f34 wx-flex">昵称</text>
+  </view>
+
+  <view class="wx-flex">
+    <input  placeholder="昵称" placeholder-class="placeholderstyle" bindinput="changeNickName" cursor-spacing="50px" value="{{nickName}}" />  
+  </view>
+
+  <view class="wx-flex">
+    <text class="o-arrow-r"></text>
+  </view>
+</view>
+<!-- 性别 -->
+<view class="wx-flex o-teaser align-str bod-b" bindtap="changeGender">
+  <view  class="wx-flex">
+    <text class="c-black f34 wx-flex">性别</text>
+  </view>
+ 
+  <view class="wx-flex">
+    <input  placeholder="昵称" placeholder-class="placeholderstyle" cursor-spacing="50px" value="{{gender}}" />  
+  </view>
+
+  <view class="wx-flex">
+    <text class="o-arrow-r" ></text>
+  </view>
+</view>
+<!-- 手机号 -->
+<view class="wx-flex o-teaser align-str bod-b" bindtap="updataPhoneNum">
+  <view  class="wx-flex">
+    <text class="c-black f34 wx-flex">手机号</text>
+  </view>
+
+  <view class="wx-flex">
+    <input  placeholder="手机号" placeholder-class="placeholderstyle" cursor-spacing="50px" value="{{bindPhoneNum}}" />  
+  </view>
+
+  <view class="wx-flex">
+    <text class="o-arrow-r" ></text>
+  </view>
+</view>
+
+ <view class="mt60 btn-area">
+    <button type="primary" bindtap="saveUserInfo" hover-class="other-button-hover" class="btn-color-fc6919 mb30"> 保存 </button>
+  </view>
+ <!-- S 提示 -->
+   <view class="o-tip bod-box" hidden="{{ toast }}">
+    <text>{{ toastTxt }}</text>
+  </view> 
+  <!-- E 提示 -->

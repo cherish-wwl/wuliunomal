@@ -1,0 +1,35 @@
+<!--managerAddress.wxml-->
+<radio-group bindchange="radioChange">
+  <block wx:for="{{ orderList }}" wx:for-item="order">
+   
+      <view class="wx-flex-c address-item mt30 f30 c-g888">
+          <view class="wx-flex pr-30">
+            <text>{{order.name}}</text>
+            <text>{{order.phone}}</text>
+          </view>
+          <view class="wx-flex mt10 pr-30">
+            <text>{{order.area}} {{order.areaDetail}}</text>
+          </view>
+          <view class="tools wx-flex mt30 ptop-10 pr-30">
+            <label class="wx-flex">
+              <radio value="{{order.id}}" checked="{{order.isDefault=='1'?true:false}}" data-addid="{{order.id}}" bindtap='changeDefault' />
+              <text> 默认地址</text>
+            </label>
+            <view class="wx-flex">
+                <view class="tools-btn wx-flex" data-addid="{{order.id}}" bindtap='editDaddress'>
+                  <image src="../../../images/order/d7.png" class="tool-icon"></image>
+                  <text>   编辑</text>
+                </view>
+                <view class="tools-btn wx-flex" data-addid="{{order.id}}" bindtap='delConfirm'>
+                  <image src="../../../images/order/d4.png" class="tool-icon"></image>
+                  <text>   删除</text>
+                </view>
+            </view>
+          </view>
+      </view>
+ 
+  </block>  
+</radio-group>
+  <view class="mt60 btn-area">
+    <button type="primary" bindtap="addAddress" hover-class="other-button-hover" class="btn-color-fc6919 mb30"> 新增地址 </button>
+  </view>

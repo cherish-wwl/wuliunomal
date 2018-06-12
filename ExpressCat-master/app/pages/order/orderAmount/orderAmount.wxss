@@ -1,0 +1,54 @@
+/* pages/orderAmount/orderAmount.wxss */
+.a-tip{
+    font-size:26rpx;
+    padding:36rpx 30rpx 28rpx;
+}
+ .image-scan {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+
+}
+page {
+   background: #efeff4; 
+}
+
+.rows{
+  background-color:#fff;
+  margin:20rpx 0 30rpx 0;
+
+}
+.bc-gfff{
+  background-color:#fff;
+}
+.rows2{
+  position:absolute;
+  top:230rpx;
+  text-align:center;
+  width: 100%;
+}
+
+.massage-info{
+  margin-left:75rpx;
+}
+.wx-block{
+  display: block
+}
+.mt44{
+  margin-top:44rpx;
+}
+.c-gfc6919{
+  color: #fc6919;
+}
+.width60{
+  width: 60%;
+  margin:0;
+
+}
+.wechat-font{
+  margin-left: 30rpx;
+  
+}
+.whiteSpace-nowrap{
+  white-space: nowrap;
+}

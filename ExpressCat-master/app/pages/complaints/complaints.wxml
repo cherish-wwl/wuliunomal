@@ -1,0 +1,26 @@
+<!--complaints.wxml-->
+
+<view class="wx-flex line">
+  <text class="font34"> 投诉类型：</text>
+  <picker bindchange="bindPickerChange" value="{{areaIndex}}" range="{{ area }}">  
+    <view class="picker wx-flex">  
+      <text class="font30 c-g888"> {{initText}}</text>
+      <image src="../../images/u85.png" class="send-icon38" />
+    </view>  
+  </picker>
+
+</view>
+
+<view class="sugguests">
+    <textarea maxlength="100" bindinput='getSugguests' class="complaints font34" placeholder="意见或备注"/>
+</view>
+
+<view class="btnline wx-block">
+    <button class="submit-btn " bindtap="submitComplaints">提交</button>
+</view>
+
+<!-- S 提示 -->
+  <view class="o-tip bod-box" hidden="{{ toast }}">
+  <text>{{ toastTxt }}</text>
+  </view> 
+<!-- E 提示 -->

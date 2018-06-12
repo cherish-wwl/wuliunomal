@@ -1,0 +1,43 @@
+
+ <!-- S 提示 -->
+   <view class="o-tip bod-box" hidden="{{ toast }}">
+    <text>{{ toastTxt }}</text>
+  </view> 
+  <!-- E 提示 -->
+<!-- 手机号 -->
+<!-- <view class="wx-flex1 o-teaser align-str bod-b" hidden="{{ newBind }}"> -->
+<view class="wx-flex1 o-teaser align-str bod-b">
+  <view  class="wx-flex margin-right-30">
+    <text class="c-black f32 wx-flex">手机号</text>
+  </view>
+
+  <view class="wx-flex">
+    <input bindinput="phoneInput" placeholder="请输入手机号" placeholder-class="placeholderstyle" cursor-spacing="40px" value="{{phone}}" />  
+  </view>
+  <view class="wx-flex">
+  </view>
+</view>
+
+<!-- 验证码 -->
+<view class="wx-flex1 o-teaser align-str bod-b">
+  <view  class="wx-flex margin-right-30">
+    <text class="c-black f32 wx-flex">验证码</text>
+  </view>
+
+  <view class="wx-flex">
+    <input type="number" bindinput="verifyCodeInput" placeholder="请输入验证码" placeholder-class="placeholderstyle" cursor-spacing="40px" value="{{verifyCode}}" />  
+  </view>
+
+  <view class="wx-flex">
+    <span class="f32 color-gfc6919 {{selected?'phone_huo':'hidden'}}" bindtap="countdown">{{second}}s</span>
+    <span class="f32 color-gfc6919 {{selected1?'phone_huo':'hidden'}}"bindtap="getphone">获取验证码</span>
+  </view>
+</view>
+
+
+ <view class="mt60 btn-area">
+    <button type="primary" bindtap="updatePhone" hover-class="other-button-hover" class="btn-color-fc6919 mb30"> 保存 </button>
+  </view>
+
+
+ 

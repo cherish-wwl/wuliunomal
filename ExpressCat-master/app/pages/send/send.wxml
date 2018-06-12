@@ -1,0 +1,174 @@
+<!--index.wxml-->
+
+
+<view class="container">
+
+  <!-- S 寄 -->
+  <view class="mt16 o-con">
+
+      <view class="wx-flex o-teaser align-str bod-b">
+        <view class="wx-flex wx-flex-bd just-start" bindtap="fromW">
+          <image src="../../images/send/u333.png" class="send-icon" />
+          <text class="c-gray f34" hidden="{{ fromWh }}">从哪里寄</text>
+          <view class="wx-flex-c" hidden="{{ fromWhC }}">
+            <text class="f32 c-g999">{{ name }}　　　{{ phone }}</text>
+            <text class="f34 o-adr-e">{{ address }}</text>
+          </view>
+        </view>
+      
+        <image src="../../images/send/u41.png" class="send-icon" bindtap="sendAddress" />
+        <!-- <text class="c-green f32 o-adr-s wx-flex" bindtap="sendAddress">地址簿</text> -->
+      </view>
+
+      <view class="wx-flex o-teaser align-str" >
+        <view class="wx-flex wx-flex-bd just-start" bindtap="toW">
+          <image src="../../images/send/u355.png" class="send-icon" />
+          <text class="c-gray f34" hidden="{{ toWh }}">寄到哪里</text>
+          <view class="wx-flex-c" hidden="{{ toWhC }}">
+            <text class="f32 c-g999">{{ name2 }}　　　{{ phone2 }}</text>
+            <text class="f34 o-adr-e">{{ address2 }}</text>
+          </view>
+        </view>
+        <!-- <text class="c-green f32 o-adr-s wx-flex" bindtap="receiverAddress">地址簿</text> -->
+            <image src="../../images/send/u41.png" class="send-icon"  bindtap="receiverAddress" />
+      </view>
+
+  </view>
+  <!-- E 寄 -->
+
+  <!-- S 选择 -->
+  <view class="mt16 o-con">
+      <!-- 1 -->
+      <view class="wx-flex o-teaser align-str" bindtap="bindWeightChange">
+        <text class="c-black f34 wx-flex">预估重量</text>
+        <view class="wx-flex">
+          <view class="picker c-g888 f32 o-cho-btn">
+              {{ initWeightText }}
+          </view> 
+           <text class="o-arrow-r"></text>
+        </view>
+      </view>
+      <!--向上弹出框  -->
+      <view class="commodity_screen" bindtap="hideModal" wx:if="{{showWeightModalStatus}}"></view>
+      <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showWeightModalStatus}}">
+        <view class="wx-block commodity-title"><text class="f34">预估重量</text></view>
+     
+        <radio-group class="radio-group" >
+          <label class="radio radio-item wx-flex o-teaser1 align-str" wx:for="{{ goodsWeight }}" bindtap="chooseWeight" data-weightvalue="{{item}}">
+            <text class="f30 c-g888">{{item}}</text>
+            <radio value="{{item}}" />
+          </label>
+        </radio-group>
+
+        <view class="wx-flex o-teaser1 align-str">
+          <text class="f22 c-gb2b2b2">选择五公斤以下，按照统一价钱，直接支付，如果选择朕也不知道，不进行支付，下单成功后，等待快递员到了以后，再支付。</text>
+        </view>
+        <button class="btn-color-fc6919" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover" 
+          bindtap="confirmWeight"> 确认 </button>
+      </view>  
+
+        
+      <!-- 2 -->
+      <view class="wx-flex o-teaser align-str bod-b"  bindtap="bindTypeChange">
+        <text class="c-black f34 wx-flex">寄件类型</text>
+       <view class="wx-flex">
+          <view class="picker c-g888 f32 o-cho-btn">
+              {{ initTypeText }}
+          </view> 
+           <text class="o-arrow-r"></text>
+        </view>
+      </view>
+
+       <!--向上弹出框  -->
+      <view class="commodity_screen" bindtap="hideModal" wx:if="{{showTypeModalStatus}}"></view>
+      <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showTypeModalStatus}}">
+        <view class="wx-block commodity-title"><text class="f34">寄件类型</text></view>
+        <view class="commodity-goods">
+          <view wx:for="{{ goodsType }}" class="goods-item c-g999 {{item.isActive == true ? 'type-action' : ''}}"  bindtap="chooseType" data-typevalue="{{item}}"> 
+            <text class="f28" data-goodid="{{item.id}}">{{item.name}}</text>
+          </view>
+        </view>
+        <button class="btn-color-fc6919" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover" 
+          bindtap="confirmType"> 确认 </button>
+      </view>  
+
+       <!-- E 寄件数量picker-view-->
+      <!-- 3 -->
+      <view class="wx-flex o-teaser align-str bod-b item-count whiteSpace">
+        <text class="c-black f34 wx-flex">寄件件数</text>
+        <text class="f38">必填</text>
+        <view class="wx-flex count-view" bindtap="expressTap">
+          <text class="minus {{minusStatus}}" bindtap="bindMinus">-</text>
+          <input class="thingsCount" type="number" bindchange="bindManual" value="{{num}}" cursor-spacing="25px" />
+          <text class="plus normal" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+
+       <!-- E 物品名称picker-view-->
+      <!-- 4 -->
+      <view class="wx-flex o-teaser align-str bod-b item-name whiteSpace">
+        <text class="c-black f34 wx-flex">物品名称</text>
+         <input  placeholder="选填" placeholder-class="placeholderstyle" cursor-spacing="50px" bindchange="expressTap" />
+         <view class="wx-flex" >
+          <!-- <text class="c-g888 f32 o-cho-btn">{{ expressName }}</text>
+          <text class="o-arrow-r"></text> -->
+        </view> 
+      </view>
+
+      <!-- 5 预约取货时间-->
+      <view class="wx-flex o-teaser align-str bod-b whiteSpace">
+        <text class="c-black f34 wx-flex">期望上门时间</text>
+        <view class="wx-flex">
+          <!--<text class="c-g888 f32 o-cho-btn">请选择</text>-->
+          <text bindtap="bindTimeChange" class="c-black f32 o-cho-btn">{{ date }} {{ time }}</text>
+          <text class="o-arrow-r"></text>
+        </view>        
+      </view>
+   
+      <!-- S 期待上门时间picker-view-->
+      <view class="commodity_screen" bindtap="hideModal" wx:if="{{isTime}}"></view>
+      <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{isTime}}">
+        <view class="wx-block commodity-title"><text class="f34">期望上门时间</text></view>
+        <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindTChange" class="modal-body">
+         
+          <picker-view-column>
+            <view wx:for="{{dates}}" style="line-height: 50px" data-date="{{item}}">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{times}}" style="line-height: 50px" data-time="{{item}}">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+        <button class="btn-color-fc6919" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover" 
+          bindtap="confirmTime"> 确认 </button>
+      </view>  
+      <!-- E 期待上门时间picker-view-->
+     
+
+      <view class="wx-flex o-teaser align-str bod-b " bindtap="controllTextarea">
+         <view class="controllTextarea f26 {{hasContext == true ? 'c-g333' : 'c-gray'}}" hidden="{{controllTextarea}}">
+         {{defaultTextarea}}
+        </view> 
+        
+         <textarea maxlength="50" bindblur="lostFocus" auto-height="true" auto-focus="{{textareafocus}}" bindinput='changeAreatext' placeholder-class="f26 c-gray" hidden="{{textareahidden}}" focus="{{textareafocus}}"
+         class="kuhuyijian"  placeholder="{{defaultTextarea}}"/> 
+ 
+      </view>
+    </view>
+  <!-- E 选择 -->
+</view>
+  
+   
+   <view class="btn-area pos-bot bod-box"> 
+      <button class="btn-color-fc6919" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+          disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover" bindtap="confirmOrder"> 确认下单                 
+      </button> 
+   </view>  
+
+  <!-- S 提示 -->
+   <view class="o-tip bod-box" hidden="{{ toast }}">
+    <text>{{ toastTxt }}</text>
+  </view> 
+  <!-- E 提示 -->

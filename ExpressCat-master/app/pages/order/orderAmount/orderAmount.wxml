@@ -1,0 +1,54 @@
+<!--pages/orderAmount/orderAmount.wxml-->
+
+<view class="sub-con">
+
+  <!-- <view class="rows">
+    <view class="wx-flex o-teaser bod-b">
+      <text class="wx-flex f32 c-g333">快递编号</text>
+      <input type="number" class="input-txt" placeholder="请输入快递单号" placeholder-class="f30 c-gray" value="{{ number }}" bindinput="numberInput" />
+      <image class="image-scan" src="../../../images/index/scanning.png"></image>
+    </view>
+  </view> -->
+
+  <view class="bc-gfff">
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex f32 c-g333">物品重量</text>
+      <text class="f30 c-gray massage-info" >{{massages}}</text>
+    </view>
+  </view>
+  <view class="bc-gfff">
+    <image class="slide-image" src="../../../images/order/G3.png"></image> 
+    <view class="rows2">
+      <text class="wx-block f30 c-white">快递费用（元）</text>
+      <text class="wx-block f90 c-white mt44 confirm-info" >{{confirmMsg}}</text> 
+    </view>
+  </view>
+  <view class="bc-gfff">
+    <view class="wx-flex just-start o-teaser bod-b">
+      <radio-group class="radio-group slide-image" bindchange="radioChange">
+        <label class="radio wx-flex slide-image">
+          <view class="wx-flex">
+           <image class="image-scan" src="../../../images/order/w2.png"></image>
+            <text class="wx-flex f32 c-g333 wechat-font">微信支付</text>
+          </view>
+         
+          <radio value="1" checked="true" />
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="wx-flex btn-area bod-box pos-bot bc-gfff">
+    <view class="wx-flex">
+      <text class="f26 c-g333 whiteSpace-nowrap">实际支付：</text> 
+      <text class="f34 c-gfc6919 whiteSpace-nowrap">{{realFee}}</text>
+    </view>
+    
+    <button type="primary " class="btn-color-fc6919 width60 c-white" hover-class="other-button-hover" bindtap="confirmAmount"> 立即支付 </button>
+  </view>
+  <!-- S 提示 -->
+    <view class="o-tip0 bod-box" hidden="{{ toast }}">
+        <text>{{ toastTxt }}</text>
+    </view>
+    <!-- E 提示 -->
+</view>

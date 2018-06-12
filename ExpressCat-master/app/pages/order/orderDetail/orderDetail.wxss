@@ -1,0 +1,149 @@
+/* pages/orderDetail/orderDetail.wxss */
+page {
+   background: #efeff4; 
+}
+.c-fc6919{
+  color: #fc6919;
+}
+.wx-flex1{
+  display: flex;
+  align-items:center;
+}
+.order-img1{
+  width:50rpx;
+  height:50rpx;
+ 
+}
+.wx-inline-block{
+  display: inline-block;
+  justify-content: center;
+  text-align: center
+}
+
+/* S 物流信息 */
+.l-logList .l-li{
+	border-left:2rpx solid #b1b1b5;
+	color:#9b9da1;
+	padding-bottom:30rpx;
+  margin:1px 0;
+  /* border-bottom:1px solid #e6e6e6; */
+  /* padding-top:30rpx; */
+}
+/* .l-li:first-child{
+  padding-top:0;
+}
+.l-li:last-child{
+  border-bottom:none;
+} */
+
+.l-logList .l-li .log-icon{
+	display:block;
+	width:25rpx;
+	height:25rpx;
+	background:#ddd;
+  border: 1px solid #b1b1b5;
+	border-radius:50%;
+	margin-left:-13rpx;
+}
+.l-logList-con{
+	width:98%;
+	margin:0 0 0 36rpx;
+  margin-top:-20rpx;
+}
+.l-logList .l-li:first-child .log-icon{
+    width:35rpx;
+    height:35rpx;
+    background:#fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiMjZjZjUyNy0wN2M4LTQzZjktYTkzZi1hZjliMTlhMGU2OTEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDMwM0I0N0VFNDU0MTFFNkFCMkZDMTk5MzhEM0M0NjkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDMwM0I0N0RFNDU0MTFFNkFCMkZDMTk5MzhEM0M0NjkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowOTUwYjRlYy00OWRkLTQwNzEtYmIyNS1mNTliNzYwMzRlYjkiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDozNDM4ZTAyYS0xMjI3LTExN2EtODI1Mi1iOGQ2NzgxZWM4Y2MiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4zlhc5AAACJUlEQVR42qSVu0tcQRTGZy+4ZhGfjY9EEEGwMSYBXRTFkBSub2IR0F4ljSRF8h9EEAtLCQRLFwRtTIghuKuiLq4iKhYGxCImLml8IqI2fke+CQfZde+aAz/mzsw538y998wZT9FEoUlguaALNIHHoABcgt9gB3wDQXAYL9gTR/gBeAc+gBxztx2BITAMzvWEc8uxBKyAAYqGQB8oA+mkjGMh+nwEUcbG3fEjEGG7Dd6A2SQ7fg5GQDk/UQ3bfzuW15+k6DzwuxA19KkGc4wVDZ8WfguqwE/QDk447gX9fJNTEuGYlz4y1sG3rKLWzafIQ7sLskA9WGTAQ/AFPEmw23XQCv6wXwsWuKlShymVDWaUqDeJqOHcV/5QsSVqiFaXCDdyYlwF9SURtVYJelXfagQcJRBWDt3GvWnfkF1QhPPZ+aUcnqUg/FQ977HNF+ELdtLN/ewq3qAIx1QWWFtLQXhLPRez/eswdw1TzVowBWHt+4Lthgh/Z+e1cvgkky5EN+lrbmlMO1zxGLxkkht+9xYegkQmCzerf1RDDdEKivABGJRTCD4zwQ1PlJ9HdBWckVWOVatTJzGj1BCtA1vdpHAsgwoWlDbWADeWCaZAA3+kLHhui5AU6U6wT4coS6JxUTajjJHdv7IFXxd6uW7quGo5T+IP0CNFBaSBDM71cC7M/hZjd+66mny8mt7/z9XkSXKZSh0I8DK1jjGm2TQYS3SZXgswACPyfvajjE6iAAAAAElFTkSuQmCC") no-repeat;
+    background-size:100%;
+    margin-left:-16rpx;
+    border:none;
+}
+
+.l-logList .l-li:last-child{
+	padding-bottom:0;
+    border-left:2rpx solid #fff;
+}
+.l-logList .l-li:first-child .log-info-txt{
+    color:#333333;
+}
+.l-logList .l-li:first-child .log-F-txt{
+   color:#888888;
+}
+.l-logList .l-li .log-info-txt{
+    font-size:26rpx;
+    color:#b2b2b2;
+}
+.l-logList .l-li .log-F-txt{
+    font-size:22rpx;
+    color:#b2b2b2;
+}
+
+.sended-time{
+    padding:28rpx 0;
+    color:#353535;
+    font-size:34rpx;
+}
+.log-box{
+    margin:40rpx 0;
+}
+/* E 物流信息 */
+
+.btn-white{
+  align-items:center;
+  display:flex;
+  padding:17rpx 45rpx 17rpx 45rpx;
+  border:2px solid rgba(5,5,5,0.10);
+  border-radius:40rpx;
+  margin-left:10rpx; 
+  margin-right:30rpx;
+  margin-top:14rpx;
+  margin-bottom:7px;
+
+
+}
+.wx-flex-end{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+
+}
+.btn-view{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  border-top:1px solid #e5e5e5;
+  background-color:#fff; 
+}
+.margin-16{
+  margin:16rpx 0 16rpx 0;
+
+}
+.bg-gfff{
+ 
+  background-color:#fff;
+}
+.mb-30{
+  margin-bottom:30rpx;
+}
+.pd-30{
+  padding: 30rpx;
+}
+.width-100{
+  width: 100%;
+}
+.pb-30{
+  border-bottom:1px solid #ddd;
+  padding-bottom:30rpx;
+}
+.l-logList .l-li:last-child .pb-30{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.o-con {
+  margin-bottom:100rpx;
+  
+}
+.workbreak{
+  word-break:break-all;
+}

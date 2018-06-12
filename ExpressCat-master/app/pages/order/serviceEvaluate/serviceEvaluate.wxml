@@ -1,0 +1,75 @@
+
+<view class="hang-notes">
+  <text class="c-g888 f28">给快递哥打分，满意要打5分哦~~</text>
+</view>
+
+<view class="wx-flex-c container30padding">
+  <view class="wx-flex">
+    <text class="f32 c-g333">收件速度</text>
+    <view class="classname">
+        <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*150}}rpx" src="{{recipientKey > item ?(recipientKey-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <!-- <view class="item" data-key="{{item+0.5}}" bindtap="selectrecipientLeft"></view> -->
+        <view class="item" data-key="{{item+1}}" bindtap="selectrecipientLeft"></view>
+        <view class="item"  data-key="{{item+1}}" bindtap="selectrecipientRight"></view>
+      </image>
+    </block> 
+    </view>
+ 
+  </view>
+   <view class="wx-flex">
+    <text class="f32 c-g333">服务态度</text>
+    <view class="classname">
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{item*150}}rpx" src="{{serviceKey > item ?(serviceKey-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+          <!-- <view class="item" data-key="{{item+0.5}}" bindtap="selectserviceLeft"></view> -->
+          <view class="item" data-key="{{item+1}}" bindtap="selectserviceLeft"></view>
+          <view class="item" data-key="{{item+1}}" bindtap="selectserviceRight"></view>
+        </image>
+      </block>
+    </view>
+  </view> 
+   
+  <view class="wx-flex">
+    <text class="f32 c-g333">收费合理</text>
+    <view>
+      <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*150}}rpx" src="{{feeKey > item ?(feeKey-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <!-- <view class="item"  data-key="{{item+0.5}}" bindtap="selectFeeLeft"></view> -->
+        <view class="item"  data-key="{{item+1}}" bindtap="selectFeeLeft"></view>
+        <view class="item" data-key="{{item+1}}" bindtap="selectFeeRight"></view>
+      </image>
+    </block>
+    </view>
+  
+  </view> 
+</view>
+
+<view class="hang-notes">
+  <text class="c-g888 f28">对快递哥的印象</text>
+</view>
+
+<view class="container30padding">
+  <view wx:for="{{ impressionLists }}" class="impression-item c-g888 {{item.selected == true ? 'impression-action' : ''}}" bindtap="chooseImpression" data-font="{{item.text}}"> 
+            <text class="f26">{{item.text}}</text>
+  </view>
+</view>
+
+<view class="hang-notes">
+  <text class="c-g888 f28">我要补充</text>
+</view>
+
+<view class="container30padding">
+  <textarea auto-height="true" bindinput='getCommentInfo' placeholder="我想说~~" maxlength="80" placeholder-class="f26 c-gray"/>
+</view>
+  
+<view class="btn-area pos-bot bod-box">
+    <button class="btn-color-fc6919" type="primary"  hover-class="other-button-hover" bindtap="confirmServiceEvaluate"> 提交 </button>
+</view> 
+
+
+<!-- S 提示 -->
+  <view class="o-tip bod-box" hidden="{{ toast }}">
+  <text>{{ toastTxt }}</text>
+  </view> 
+<!-- E 提示 -->

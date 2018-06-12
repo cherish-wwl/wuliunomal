@@ -1,0 +1,6 @@
+page {
+  background-color:#f1f2f3;
+}
+.content{
+  padding: 0 40rpx 0 50rpx;
+}

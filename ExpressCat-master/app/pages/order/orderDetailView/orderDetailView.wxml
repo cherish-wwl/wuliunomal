@@ -1,0 +1,112 @@
+
+
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">退款中</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已退款</view>  
+</view>  
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 61}}px" bindchange="bindChange">  
+    <!-- 我是退款中 -->  
+    <swiper-item>  
+        <block wx:for="{{ orderList0 }}" wx:for-item="order">
+          <!-- S -->
+          <view class="wx-flex-c order-list">
+            <view data-orderid="{{ order.id }}" data-waybillNo="{{order.waybillNo}}" data-status='{{order.status}}' data-pay='{{order.pay}}'>
+              <view class="wx-flex order-list-pad1 border-bottom">
+                <view class=" order-info"> 
+                  <view>
+                    <text class="f34 c-g333 user-info">{{ order.senderName }}</text>
+                  </view>
+                  <view>
+                    <text class="f26 c-g333 city-info">{{ order.senderArea }}</text>
+                  </view>
+                </view>
+                <image class="order-img" src="../../../images/order/o1.png"></image>
+                <view class="order-info"> 
+                  <view>
+                    <text class="f34 c-g333 user-info">{{ order.receiverName }}</text>
+                  </view>
+                  <view>
+                    <text class="f26 c-g333 city-info">{{ order.receiverArea }}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="wx-flex order-list-pad border-bottom">
+                <text class="order-c1 c-g333 f30">订单编号：{{ order.waybillNo }}</text>
+              
+                <image class="order-img1" src="../../../images/order/03.png"></image>
+              
+              </view>
+
+              <view class="wx-flex order-list-pad border-bottom">
+                <text class="f30 c-g333">下单时间：{{ order.createTime }}</text>
+              </view>
+            </view>
+          </view>
+          <!-- E -->
+        </block>
+        <!-- S 空 -->
+        <view class="empty-box" hidden='{{hidden0}}'>
+          <view class="wx-flex-c align-c">
+            <image src="../../../images/order/order_empty.png" class="order-empty"></image>
+            <text class="empty-text">暂无订单</text>
+          </view>
+        </view> 
+        <!-- E 空 -->
+        <view bindtap='loadingMore' data-status='3' class='wx-flex-c' hidden='{{!hidden0}}'>
+          <text class='f26 c-g888'>加载更多</text>
+        </view>
+    </swiper-item>  
+    <!-- 我是已退款 -->  
+    <swiper-item>  
+   
+        <block wx:for="{{ orderList1 }}" wx:for-item="order">
+          <!-- S -->
+          <view class="wx-flex-c order-list"  data-orderid="{{ order.orderid }}">
+            <view>
+              <view class="wx-flex order-list-pad1 border-bottom">
+                <view class=" order-info"> 
+                  <view>
+                    <text class="f34 c-g333 user-info">{{ order.senderName }}</text>
+                  </view>
+                  <view>
+                    <text class="f26 c-g333 city-info">{{ order.senderArea }}</text>
+                  </view>
+                </view>
+                <image class="order-img" src="../../../images/order/o1.png"></image>
+                <view class="order-info"> 
+                  <view>
+                    <text class="f34 c-g333 user-info">{{ order.receiverName }}</text>
+                  </view>
+                  <view>
+                    <text class="f26 c-g333 city-info">{{ order.receiverArea }}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="wx-flex order-list-pad border-bottom">
+                <text class="order-c1 c-g333 f30">订单编号：{{ order.waybillNo }}</text>
+              
+                <image class="order-img1" src="../../../images/order/03.png"></image>
+              
+              </view>
+
+              <view class="wx-flex order-list-pad border-bottom">
+                <text class="f30 c-g333">下单时间：{{ order.createTime }}</text>
+              </view>
+            </view>
+            
+          </view>
+          <!-- E -->
+        </block>
+        <!-- S 空 -->
+        <view class="empty-box" hidden='{{hidden1}}'>
+          <view class="wx-flex-c align-c">
+            <image src="../../../images/order/order_empty.png" class="order-empty"></image>
+            <text class="empty-text">暂无订单</text>
+          </view>
+        </view> 
+        <!-- E 空 -->
+        <view bindtap='loadingMore' data-status='4' class='wx-flex-c' hidden='{{!hidden1}}'><text class='f26 c-g888'>加载更多</text></view>
+      
+    </swiper-item>  
+</swiper>  

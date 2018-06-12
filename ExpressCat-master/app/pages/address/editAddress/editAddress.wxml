@@ -1,0 +1,61 @@
+<!--pages/address/editAddress/editAddress.wxml-->
+<view class="sub-con">
+  <view class="o-con mt16">
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f32">发货人</text>
+      <view class="wx-flex-bd f30">
+        <input type="text" class="input-txt" placeholder="姓名" placeholder-class="c-gray" maxlength='15' value="{{ name }}" bindinput="userNameInput" />
+      </view>
+    </view>
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f32">联系电话</text>
+      <view class="wx-flex-bd f30">
+        <input type="text" class="input-txt" placeholder="手机号"  placeholder-class="c-gray" value="{{ phone }}" bindinput="phoneInput" />
+      </view>
+    </view>
+
+     <view class="wx-flex just-start o-teaser bod-b" bindtap='searchMapPage'>
+      <text class="wx-flex-hd f32">选择地址</text>
+      <view class="wx-flex-bd f30">
+        <text>{{address}}</text>
+      </view>
+      <text class="o-arrow-r"></text>
+    </view>
+
+   
+    <view class="wx-flex just-start o-teaser bod-b">
+       <text class="wx-flex-hd f32 align-start">补充地址</text>
+      <view class="wx-flex-bd f30">
+        <textarea type="text" class="input-txt txtA" placeholder="补充详细信息，如几单元房间号"  placeholder-class="c-gray" value="{{ addedAddress }}" bindinput="addressInput" />
+      </view>
+    </view>
+
+  </view>
+
+  <!--设置默认  -->
+  <view class="wx-flex defult01">
+    <text class="wx-flex-hd f32">设置默认</text>
+    <switch  bindchange="switch1Change" checked="{{isDefault}}"  />
+    <!-- <image class="deliver-image"  bindtap="setfaultBTn" type="{{defaultType}}" src="{{defaultImg}}"></image> -->
+  </view>
+  <view class="seeList">
+     <text class="f26 underline" bindtap="seeContraband">点击查看《禁寄品》清单</text>
+  </view>
+
+  <view class="mt60 btn-area">
+      <button type="primary" bindtap="default" hover-class="other-button-hover" class="mb30 btn-color-fc6919" bindtap="saveAddress"> 保存 </button>
+      <button type="default"  bindtap="delSendAddress" hover-class="other-button-hover"> 删除 </button>
+  </view>
+</view>
+<view class="pop-mask" hidden="{{ isHidden }}"></view>
+<view class="pop-box"  hidden="{{ isHidden }}">
+    <view class="wx-flex just-center one-line f36">
+        <text>是否确认删除该条地址</text>
+    </view>
+    <view class="wx-flex pop-btn-area">
+        <text class="wx-flex-bd pop-btn" bindtap="delCancel">取消</text>
+        <text class="wx-flex-bd pop-btn c-green" bindtap="delConfirm">确认</text>
+    </view>
+</view>

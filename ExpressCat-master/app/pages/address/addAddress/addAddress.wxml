@@ -1,0 +1,58 @@
+<!--pages/address/addAddress/addAddress.wxml-->
+<view class="sub-con">
+  <view class="o-con mt16">
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f32">发货人</text>
+      <view class="wx-flex-bd f30">
+        <input type="text" class="input-txt" placeholder="姓名" placeholder-class="c-gray" maxlength='15' value="{{ userName }}" bindinput="userNameInput" />
+      </view>
+    </view>
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f32">电话</text>
+      <view class="wx-flex-bd f30">
+        <input type="number" class="input-txt" placeholder="手机号"  placeholder-class="c-gray" value="{{ phone }}" bindinput="phoneInput" />
+      </view>
+    </view>
+
+    <view class="wx-flex just-start o-teaser bod-b" bindtap='searchMapPage'>
+      <text class="wx-flex-hd f32">选择地址</text>
+      <view class="wx-flex-bd f30">
+        <text>{{address}}</text>
+      </view>
+      <text class="o-arrow-r"></text>
+    </view>
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f32 align-start">补充地址</text>
+      <view class="wx-flex-bd f30">
+        <textarea type="text" class="input-txt txtA" placeholder="补充详细信息，如几单元房间号"  placeholder-class="c-gray" value="{{ addedAddress }}" bindinput="addressInput" />
+      </view>
+    </view>
+   
+   </view>
+    <!--设置默认  -->
+    <view class="wx-flex defult01">
+      <text class="wx-flex-hd f32">设置默认</text>
+      <switch  bindchange="switch1Change"  />
+    </view>
+
+    <view class="seeList">
+      <text class="f26 underline" bindtap="seeContraband">点击查看《禁寄品》清单</text>
+    </view>
+
+  
+    <view class="mt60 btn-area">
+        <button class="btn-color-fc6919" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"  bindtap="saveAddress"> 保存 </button>
+    </view>
+
+
+    <!-- S 提示 -->
+    <view class="o-tip bod-box" hidden="{{ toast }}" style="top:0;">
+      <text>{{ toastTxt }}</text>
+    </view>
+    <!-- E 提示 -->
+
+</view>

@@ -1,0 +1,53 @@
+/* manager.wxss */
+page {
+   background: #efeff4; 
+}
+/*tab 切换样式  */
+.swiper-tab{  
+    width: 100%;  
+    text-align: center;  
+    line-height: 80rpx;
+    /* background-color:#ffffff; */
+}  
+    
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    font-weight: bold;
+    display: inline-block;  
+    width: 33.33%;  
+    color: #FC6919;  
+    border: 1rpx solid #FC6919;
+    border-radius: 5rpx;
+}  
+.on{
+    color: #fff;  
+    background-color: #FC6919;
+}  
+/*tab 切换样式  */
+
+.address-item{
+  background-color:#fff;
+  padding:30rpx;
+
+}
+.order-empty{
+    width:229rpx;
+    height:329rpx;
+}
+.empty-box{
+    width:100%;
+    position:absolute;
+    top:294rpx;
+}
+.empty-text{
+    font-size:30rpx;
+    color:#353535;
+    padding-top:50rpx;
+}
+.swiper-box {
+  overflow:scroll;
+}
+swiper-item {
+  overflow:scroll;
+}
+

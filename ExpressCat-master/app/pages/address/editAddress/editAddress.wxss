@@ -1,0 +1,19 @@
+/* pages/address/editAddress/editAddress.wxss */
+.deliver-image{
+  width:120rpx;
+  height:75rpx;
+}
+.underline{
+  border-bottom: 1px solid #b2b2b2;
+  margin-left: 30rpx;
+  color:#b2b2b2;
+  margin-top: 30rpx;
+}
+.seeList{
+  margin-top: 30rpx;
+}
+.defult01{
+  background-color:#fff;
+  padding:28rpx 30rpx 28rpx 30rpx;
+  margin-top:30rpx;
+}

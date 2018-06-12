@@ -1,0 +1,12 @@
+.userinfo-avatar{
+  width:158rpx;
+  height:158rpx;
+  border-radius:50%;
+}
+.avatar-item{
+  width:100%;
+  text-align:center;
+}
+.o-tip, .o-tip0 {
+  top:0;
+}

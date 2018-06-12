@@ -1,0 +1,118 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+.order-empty{
+    width:229rpx;
+    height:329rpx;
+}
+.empty-box{
+    width:100%;
+    position:absolute;
+    top:294rpx;
+}
+.empty-text{
+    font-size:30rpx;
+    color:#353535;
+    padding-top:50rpx;
+}
+.phone-box{
+    position:absolute;
+    bottom:30rpx;
+    width:100%;
+    color:#576b95;
+    font-size:26rpx;
+    text-align:center;
+}
+.order-list{
+    /* margin-top:16rpx; */
+    background:#fff;
+    border:2rpx solid #e5e5e5;
+    border-left:none;
+    border-right:none;
+    margin:20rpx 15rpx 20rpx 15rpx;
+    border-radius:15rpx; 
+}
+
+
+
+.order-list-pad1{
+    padding:30rpx;
+    justify-content: space-around;
+}
+.order-list-pad2{
+      padding:30rpx;
+    justify-content: flex-end;
+}
+.order-list-pad{
+    padding:30rpx;
+    justify-content: space-between;
+}
+/*tab 切换样式  */
+.swiper-tab{  
+    width: 100%;  
+    text-align: center;  
+    line-height: 80rpx;
+    background-color:#ffffff;
+
+}  
+    
+.swiper-tab-list{  
+    font-size: 30rpx;  
+    font-weight: bold;
+    display: inline-block;  
+    width: 50%;  
+    color: #888888;  
+}  
+.on{
+    color: #FC6919;  
+    border-bottom: 6rpx solid #FC6919;
+}  
+/*tab 切换样式  */
+.swiper-box{ 
+  display: block; 
+  height: 100%; 
+  width: 100%;
+  overflow: hidden;
+}  
+.swiper-box view{  
+    text-align: center;  
+}  
+.order-img{
+  width: 120rpx;
+  height: 50rpx;
+}
+.order-img1{
+  width:50rpx;
+  height:50rpx;
+
+}
+.c-g333{
+  color: #333333;
+}
+.user-info{
+  font-weight: bold;
+  
+}
+.border-bottom{
+  border-bottom: 1px solid #e5e5e5;
+}
+page {
+   background: #efeff4; 
+}
+.btn-white{
+  align-items:center;
+  display:flex;
+  padding:17rpx 25rpx 17rpx 25rpx;
+  border:2px solid rgba(5,5,5,0.10);
+  border-radius:40rpx;
+  margin-left:10rpx; 
+
+}
+.width-100{
+  width: 100%;
+}
+page{
+  overflow: hidden;
+}
+ swiper-item {
+  overflow:scroll;
+} 

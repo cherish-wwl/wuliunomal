@@ -1,0 +1,128 @@
+
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="">
+
+  <!-- S 选择 -->
+  <view class="mt16 o-con">
+
+    <!-- 1 -->
+    <view class="wx-flex order-teaser align-str bod-b bg-gfff mb-30">
+      <view class="wx-inline-block">
+        <view class="wx-flex1">
+          <text class="c-g333 f26">订单状态：</text>
+          <view class="f26 c-fc6919">
+            <text>{{ status }}</text> 
+            <!-- <text hidden="{{ cancelH }}">{{ status }}</text> -->
+          </view>
+        </view>
+        <view class="wx-flex1 margin-16">
+          <text class="c-g333 f26">订单编号：</text>
+          <text class="c-g333 f26">{{ orderinfo.waybillNo }}</text>
+        </view>
+         <view class="wx-flex1">
+          <text class="c-g333 f26">取件时间：</text>
+          <text class="c-g333 f26">{{ orderinfo.pickupTime }}</text>
+        </view>
+      </view>
+      <view class="wx-flex1">
+          <image class="order-img1" src="../../../images/order/03.png"></image>
+      </view>
+    
+      <!-- E 待取件 -->
+    </view>
+
+    <!-- 2 -->
+
+    <!-- S 寄 -->
+    <view class="o-con bod-tb0 bg-gfff">
+      <view class="wx-flex-c o-teaser align-str bod-b">
+        <view class="wx-flex1">
+         <text class="c-g333 f32">备注信息</text>
+        </view>
+        <view class="wx-flex1 workbreak">
+          <text class="c-g888 f30">{{ orderinfo.remark==""?"无":orderinfo.remark }}</text>
+          <!-- <text class="o-arrow-r"></text> -->
+         </view>
+      </view>
+     
+    </view>
+    <!-- E 寄 -->
+    <!-- 3 -->
+    <view class="c-g888 f28 pd-30">物流详情</view>
+    <!-- 4 -->
+    <view class="wx-flex-c order-teaser align-str bg-gfff">
+      <view class="wx-flex just-start o-teaser">
+
+        <!-- S 物流信息 -->
+        <view class="l-log-info width-100">
+          <view class="l-log-box">
+              <view class="l-logList j-list">
+                  <block wx:for="{{ orderinfo.expressList }}" wx:for-item="express">
+                  <!-- li -->
+                  <view class="wx-flex l-li">
+                      <view class="wx-flex clearfix width-100">
+                          <text class="align-start log-icon "></text>
+                          <view class="l-logList-con wx-flex-c pb-30">
+                            <view>
+                              <text class="log-info-txt">{{ express.describe }}</text>
+                            </view>
+                            <view>
+                              <text class="log-F-txt  mt20">{{ express.createTime }}</text>
+                            </view>
+                          </view>
+                      </view>
+                  </view>
+                  <!-- li -->
+                  </block>
+              </view>
+          </view>
+        </view>
+        <!-- E 物流信息 -->
+      </view>
+   
+    </view>
+  </view>
+
+  <!-- E 选择 -->
+
+    
+
+  <!-- S 已签收 -->
+  <view class="btn-view" hidden="{{ osH }}">
+    <view class="wx-flex-end order-list-pad2">
+      <view class="btn-white" bindtap="linkComplaints" data-waybillNo="{{orderinfo.waybillNo}}"> 
+        <text class="f26 c-g888">投诉</text>
+      </view>
+      <view class="btn-white" bindtap="ServiceEvaluation" data-waybillNo="{{orderinfo.waybillNo}}" data-evaluate='{{orderinfo.evaluate}}'> 
+        <text class="f26 c-g888">{{order.evaluate==false?'评价':'已评价'}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- E 已签收-->
+
+  <!-- S 待取件-->
+  <view class="btn-view" hidden="{{ getH }}">
+    <view class="wx-flex-end order-list-pad2">
+  
+      <view class="btn-white" bindtap='cancelOrder' data-pay='{{pay}}' data-waybillNo="{{orderinfo.waybillNo}}"> 
+        <text class="f26 c-g888" >{{pay=="false"?'取消订单':'申请退款'}}</text>
+      </view>
+      <view class="btn-white" bindtap='advise' data-waybillNo="{{orderinfo.waybillNo}}"> 
+        <text class="f26 c-g888">催单</text>
+      </view>
+      <view class="btn-white" bindtap='orderAmount' data-waybillNo="{{orderinfo.waybillNo}}" data-pay='{{pay}}'> 
+          <text class="f26 c-g888" >{{pay=="false"?'立即支付':'已支付'}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- E 待取件   -->
+    <!-- S  运送中 -->
+  <view class="btn-view" hidden="{{ trainH }}">
+    <view class="wx-flex-end order-list-pad2">
+      <view class="btn-white" bindtap='advise' data-waybillNo="{{orderinfo.waybillNo}}"> 
+        <text class="f26 c-g888">催单</text>
+      </view>
+    </view>
+  </view>
+  <!-- E  运送中  -->
+</view>

@@ -1,0 +1,22 @@
+<view class="country-set">
+    <text class="font30">根据国家规定，发物流必须用实名信息的形式进行发送，请抓紧时间进行实名认证</text>
+</view>
+<view class="back-color-gray">
+  <view class="wx-flex line">
+    <text class="font01">真实姓名</text>
+    <input class="input01" type="text" bindblur="nameInputEvent" />
+  </view>
+  <view class="wx-flex line">
+    <text  class="font01">身份证号码</text>
+  <input class="input01" type="number" bindblur="listenerID" />
+  </view>
+</view>
+<view class="wx-block">
+  <text class="font01 wx-block">身份证正面照</text>
+  <view class="uploadIdDiv wx-flex">
+    <image class="id-img" catchtap="chooseImageTap" src="{{idImg}}"></image>
+  </view>
+</view>
+<view class="btnline wx-block">
+    <button class="submit-btn" bindtap="submitAuthentication">提交审核</button>
+</view>

@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/send/send",
+    "pages/about/about",
+    "pages/authentication/authentication",
+    "pages/complaints/complaints",
+
+    "pages/address/deliver/deliverAddress/deliverAddress",
+
+
+
+    "pages/address/receiver/receiverAddress/receiverAddress",
+    "pages/contraband/contraband",
+    "pages/mine/mine",
+    "pages/bindphone/bindphone",
+    "pages/order/orderList/orderList",
+    "pages/order/orderAmount/orderAmount",
+    "pages/order/orderDetail/orderDetail",
+    "pages/order/orderDetailView/orderDetailView",
+    "pages/order/serviceEvaluate/serviceEvaluate",
+    "pages/address/manager/manager",
+    "pages/address/managerAddress/managerAddress",
+    "pages/address/searchMap/searchMap",
+    "pages/address/addAddress/addAddress",
+    "pages/address/editAddress/editAddress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fc6919",
+    "navigationBarTitleText": "物来物往",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#323232",
+    "selectedColor": "#EF6262",
+    "borderStyle": "dark",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/u237.png",
+        "selectedIconPath": "images/u47.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/u51.png",
+        "selectedIconPath": "images/u241.png"
+      }
+    ],
+    "enablePullDownRefresh": false
+  },
+  "debug": true
+}

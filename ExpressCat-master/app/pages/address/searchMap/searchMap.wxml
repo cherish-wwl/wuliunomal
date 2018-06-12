@@ -1,0 +1,40 @@
+<!--pages/address/searchMap/searchMap.wxml-->
+
+<view class="page">
+  <view class="wx-flex just-start line1">
+
+    <view class="wx-flex" bindtap="bindChange">  
+      <text class="f32 c-black35"> {{initText}}</text>
+      <image src="../../../images/u85.png" class="send-icon38" /> 
+    </view>  
+    <input class="line1-input f32" auto-focus='true' placeholder='请输入详细地址' bindblur='enterSearchWord' placeholder-class='f32'/>
+  </view>
+
+  <view wx:for="{{resData}}" wx:key="shop" class="page__bd">
+    <view bindtap="navTo" data-item="{{item}}">
+        <view class="">
+          <view class="f34 mb10">{{item.title}}</view>
+          <view class="f30 c-g888">{{item.address}}</view>
+        </view>
+    </view>
+  </view>
+  <view class='padding60-150' hidden='{{searchDataNULL}}'>
+    <text class='wx-block c-g888 f30'>您输入的地址定位失败，</text>
+    <text class='wx-block c-g888 f30'>建议输入小区、大厦或街道门牌号。</text>
+    <text class='wx-block c-g888 f30'>例如</text>
+    <text class='wx-block c-g888 f30'>小区名：天通苑东一区</text>
+    <text class='wx-block c-g888 f30'>大厦名：财智国际大厦</text>
+    <text class='wx-block c-g888 f30'>街道门牌号：中关村东路18号</text>
+          
+  </view>
+   <!--向上弹出框  -->
+      <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+      <view class="commodity_attr_box" wx:if="{{showModalStatus}}">
+        <!-- <view class="wx-block commodity-title"><text class="f34"></text></view> -->
+        <view class="commodity-goods">
+          <view wx:for="{{ area }}" class="goods-item c-g999" data-fullname='{{item.fullname}}' hover-class="type-action" hover-stay-time="1000" bindtap="chooseArea"> 
+            <text class="f28">{{item.fullname}}</text>
+          </view>
+        </view>
+      </view>  
+</view>

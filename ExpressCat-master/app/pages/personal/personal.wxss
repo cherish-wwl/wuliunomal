@@ -1,0 +1,94 @@
+.header1 {
+  padding:10px;
+  align-items:center;
+  justify-content:center;
+  display:flex;
+  background-color:#f90;
+  height:300rpx;
+  flex-direction: column;
+}
+
+.userinfo {
+  flex:0 0 128rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.userinfo-avatar {
+  width: 158rpx;
+  height: 158rpx;
+  border-radius: 50%;
+}
+
+.content {
+  flex: 0 0 1;
+  display: block;
+  /* height:128rpx; */
+  justify-content:center;
+  align-items:center;
+  margin-top:20rpx;
+
+}
+
+.nickname {
+  display:flex;
+  line-height:64rpx;
+  height:64rpx;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.welcome {
+  display: block;
+  line-height: 64rpx;
+  height: 64rpx;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+
+/* S 页面内容可以共用的样式 */
+.o-arrow-r {
+  width: 16rpx;
+  height: 16rpx;
+  border-width: 6rpx 6rpx 0 0;
+  border-color: #c7c7cc;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  margin-right: 4rpx;
+}
+.o-teaser {
+  padding:15rpx 30rpx 15rpx 30rpx;
+  /* margin-left:30rpx; */
+}
+.wx-flex {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.align-str {
+  align-items:stretch;
+}
+.bod-b{
+  border-bottom:8rpx solid #c9c9c9!important;
+}
+
+.f34{
+  font-size: 34rpx;
+}
+.f30{
+  font-size: 30rpx;
+}
+.c-red{
+  color: #ff0000;
+}
+image{
+  width:30px;
+  height:30px;
+}
+.c-black{
+  margin-left:10rpx;
+}

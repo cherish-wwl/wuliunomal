@@ -1,0 +1,22 @@
+.hidden{
+  display: none;
+}
+.color-gfc6919{
+  color: #fc6919;
+}
+.placeholderstyle{
+  font-size: 30rpx;
+}
+.wx-flex1{
+  display:flex;
+  justify-content: flex-start;
+  align-items:center;
+}
+.margin-right-30{
+  margin-right:30rpx;
+}
+
+
+.o-tip, .o-tip0 {
+  top:0;
+}

@@ -1,0 +1,62 @@
+<view class="header1" bindtap="modifyPersonInfo">
+  <view class="userinfo">
+    <image class="userinfo-avatar" wx:if="{{userInfo.profileImageUrl}}" src="{{userInfo.profileImageUrl}}" background-size="cover"></image>
+  </view>
+  <view class="content">
+    <view class="nickname">HI,{{userInfo.nickName}}</view>
+  </view>
+</view>
+
+<!-- 地址簿 -->
+<view class="wx-flex o-teaser align-str bod-b" bindtap="managerAddress">
+  <view  class="wx-flex">
+    <image src="../../images/u31 (2).png"></image> 
+    <text class="c-black f34 wx-flex">地址簿</text>
+  </view>
+
+  <view class="wx-flex">
+    <text class="o-arrow-r"></text>
+  </view>
+</view>
+
+<!-- 运单记录 -->
+<view class="wx-flex o-teaser align-str bod-b" bindtap="orderDetailView">
+  <view  class="wx-flex">
+    <image src="../../images/u69 (2).png"></image> 
+    <text class="c-black f34 wx-flex">退款记录</text>
+  </view>
+  <view class="wx-flex">
+    <text class="o-arrow-r"></text>
+  </view>
+</view>
+<!-- 实名认证 -->
+
+<view class="wx-flex o-teaser align-str bod-b" bindtap="realNameAuthentication">
+  <view  class="wx-flex">
+    <image src="../../images/u67.png"></image> 
+    <text class="c-black f34 wx-flex">实名认证</text>
+  </view>
+  <view class="wx-flex">
+      <text class="c-red f30 wx-flex">未认证</text>
+  </view>
+</view>
+<!-- 关于我们 -->
+<view class="wx-flex o-teaser align-str bod-b" bindtap="showAboutUsMsg">
+  <view  class="wx-flex">
+    <image src="../../images/u49.png"></image> 
+    <text class="c-black f34 wx-flex">关于我们</text>
+  </view> 
+  <view class="wx-flex">
+    <text class="o-arrow-r" ></text>
+  </view>
+</view>
+<!-- 意见与投诉 -->
+<view class="wx-flex o-teaser align-str bod-b"  bindtap="complaintsMsg">
+  <view  class="wx-flex">
+    <image src="../../images/u59.png"></image> 
+    <text class="c-black f34 wx-flex">意见与投诉</text>
+  </view>
+  <view class="wx-flex">
+    <text class="o-arrow-r"></text>
+  </view>
+</view>
